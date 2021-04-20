@@ -31,6 +31,8 @@ alias emacs='emacs -nw'
 # every time i want to do something
 # do i have news for you!!!!!!!!!!!!!
 
+alias ggc='git commit' # ah, ah, ah, too close to gcc
+alias gga='git add'
 alias gpp='git push -v'
 alias gpf='git pull -v'
 alias gba='git branch'
@@ -77,8 +79,12 @@ alias ghpf='git pull -v gh'
 
 # sets the current branch's remote to the given github repository
 ghrs() {
+	if [[ $1 == "" || $2 == "" ]]; then
+		echo "ghrs usage: ghrs (username) (repository)"
+	fi
 	git remote add gh git@github.com:$1/$2	
 	git config branch.$(git branch --show-current).pushRemote gh
+	git branch --set-upstream gh/$(git branch --show-current)
 }
 
 # sets the current branch's upstream to whatever branch is specified here from the 'gh' remote
@@ -121,9 +127,11 @@ alias emacs-term='urxvt \
 ### BYOND ###
 source ~/BYOND-513/bin/byondsetup
 
-### PS1 THEMING ###
+### ENV VARS ###
 if [ $TERM = "linux" ]; then
 	PS1=' %~ > '
 else
 	PS1='%~ > '
 fi
+
+EDITOR=vim
