@@ -27,7 +27,7 @@ let g:airline_symbols.maxlinenr = ' c'
 
 " let g:airline_symbols.linenr = '␊'
 
-""" ale
+""" ale/file-specific linting
 
 let g:ale_completion_enabled = 1
 
@@ -46,7 +46,13 @@ let g:ale_fix_on_save = 1
 " we're using standard, so two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 
-"""" runtime stuff
+" alright, so i'm too used to HTML looking like this now
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+
+" markdown limit to 80 characters
+autocmd FileType markdown setlocal tw=80
+
+"""" runtime stuff (mostly airline)
 
 :packloadall
 

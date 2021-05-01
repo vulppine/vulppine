@@ -134,4 +134,4 @@ else
 	PS1='%~ > '
 fi
 
-EDITOR=vim
+export EDITOR=vim
