@@ -74,15 +74,16 @@ ggs() {
 ### GITHUB ###
 # assumes that gh is a registered remote repo
 
-alias ghpp='git push -v gh' 
+alias ghpp='git push -v gh'
 alias ghpf='git pull -v gh'
 
 # sets the current branch's remote to the given github repository
 ghrs() {
 	if [[ $1 == "" || $2 == "" ]]; then
 		echo "ghrs usage: ghrs (username) (repository)"
+		return
 	fi
-	git remote add gh git@github.com:$1/$2	
+	git remote add gh git@github.com:$1/$2
 	git config branch.$(git branch --show-current).pushRemote gh
 	git branch --set-upstream gh/$(git branch --show-current)
 }
@@ -94,8 +95,9 @@ ghbu() {
 
 ### ETC ###
 alias alsamixer='alsamixer -g'
-alias scrot='scrot -s ~/screenshots/%Y-%m-%d_scrot.png'
-alias scrot-clip='scrot -e "xclip -in $f"'
+alias scroth='/bin/scrot -s screen.png'
+alias scrot='/bin/scrot -s ~/screenshots/%Y-%m-%d_scrot.png'
+alias scrot-clip='/bin/scrot -e "xclip -in $f"'
 
 #-bg #1d1f21 \
 

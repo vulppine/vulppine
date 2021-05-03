@@ -49,8 +49,10 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 " alright, so i'm too used to HTML looking like this now
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 
-" markdown limit to 80 characters
-autocmd FileType markdown setlocal tw=80
+" markdown limit to 80 characters, tabs at 2 spaces so that it's easier to do
+" code blocks amongst other things, and no line numbers due to the
+" automatic hard wrap
+autocmd FileType markdown setlocal tw=80 shiftwidth=2 softtabstop=2 nonumber expandtab
 
 """" runtime stuff (mostly airline)
 
