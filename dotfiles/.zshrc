@@ -42,6 +42,14 @@ alias gbl='git branch --list -a'
 alias gra='git remote add'
 alias grl='git remote -v'
 
+# add all modified files
+ggam() {
+	for i in $(git ls-files -m); do
+		gga $i
+		echo "added $i"
+	done
+}
+
 # list all branches if the first arg is empty, otherwise switch
 gbb() {
 	if [[ $1 == "" ]]; then

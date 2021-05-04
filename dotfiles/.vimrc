@@ -32,6 +32,7 @@ let g:airline_symbols.maxlinenr = ' c'
 let g:ale_completion_enabled = 1
 
 let g:ale_linters = {
+\	'markdown': [],
 \	'go': ['gopls'],
 \	'javascript': ['standard'],
 \}
