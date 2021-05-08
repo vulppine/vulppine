@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=~/go/bin/:~/.cargo/bin:$PATH
+export PATH=~/go/bin/:~/.cargo/bin:~/.pub-cache/bin:~/.android-studio/bin:$PATH
 
 ### ALIASES ###
 
@@ -23,6 +23,7 @@ alias rm='rm -Iv'
 
 ### EDITORS ###
 alias vi=vim
+alias view='vim -R'
 alias emacs='emacs -nw'
 
 ### GIT ###
@@ -91,9 +92,20 @@ ghrs() {
 		echo "ghrs usage: ghrs (username) (repository)"
 		return
 	fi
+
+	local upstream=$(git rev-parse --abbrev-ref $branch@{upstream} 2>/dev/null)
+	local remote=$(git config branch.$branch.pushRemote)
+
+	if [[ upstream != "" || remote != "" ]]; then
+		read -k 1 "choice?Warning: attempting to set upstream/remote to gh with existing upstream/remote. Are you sure? [y] "
+		if [ "$choice" != "y" ]; then
+			return
+		fi
+	fi
+
 	git remote add gh git@github.com:$1/$2
 	git config branch.$(git branch --show-current).pushRemote gh
-	git branch --set-upstream gh/$(git branch --show-current)
+	git branch --track gh/$(git branch --show-current)
 }
 
 # sets the current branch's upstream to whatever branch is specified here from the 'gh' remote
@@ -145,3 +157,6 @@ else
 fi
 
 export EDITOR=vim
+
+# specifically for android studio, in bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1

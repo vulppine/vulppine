@@ -29,8 +29,6 @@ let g:airline_symbols.maxlinenr = ' c'
 
 """ ale/file-specific linting
 
-let g:ale_completion_enabled = 1
-
 let g:ale_linters = {
 \	'markdown': [],
 \	'go': ['gopls'],
@@ -44,6 +42,21 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
+""" lsc_client
+
+let g:lsc_server_commands = {
+\	'go': {
+\		'command': 'gopls serve',
+\		'log_level': -1,
+\		'suppress_stderr': v:true,
+\	},
+\}
+let g:lsc_auto_map = {
+\	'defaults': v:true,
+\}
+
+autocmd CompleteDone * silent! pclose
+
 " we're using standard, so two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 
@@ -54,6 +67,9 @@ autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 " code blocks amongst other things, and no line numbers due to the
 " automatic hard wrap
 autocmd FileType markdown setlocal tw=80 shiftwidth=2 softtabstop=2 nonumber expandtab
+
+" dart
+autocmd FileType dart setlocal shiftwidth=2 softtabstop=2 expandtab
 
 """" runtime stuff (mostly airline)
 
