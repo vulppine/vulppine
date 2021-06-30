@@ -1,0 +1,17 @@
+
+STATUSLINE:
+vim-airline
+vim-airline-themes ( theme: minimalist )
+
+GIT:
+vimagit
+fugitive
+vim-gitgutter
+
+LANGUAGES:
+vim-go
+rust.vim
+syntastic
+
+MAYBE:
+vim-lsp
