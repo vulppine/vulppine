@@ -10,4 +10,4 @@
   [eponymous repo](https://github.com/vulppine/vulppine)
 
 *Job offer? vulppine@gmail.com. Message me on Telegram (@vulppine) if you want
-to personally talk to me.
+to personally talk to me.*
