@@ -41,6 +41,7 @@ let g:ale_fixers = {
 \	'javascript': ['standard'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_rust_rls_config = {'rust': {'clippy_preference': 'on'}}
 
 """ lsc_client
 
