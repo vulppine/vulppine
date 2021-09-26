@@ -33,15 +33,18 @@ let g:ale_linters = {
 \	'markdown': [],
 \	'go': ['gopls'],
 \	'javascript': ['standard'],
+\	'javascriptreact': ['standard'],
 \}
 
 let g:ale_fixers = {
 \	'*': ['remove_trailing_lines', 'trim_whitespace'],
 \	'go': ['gofmt', 'goimports'],
 \	'javascript': ['standard'],
+\	'javascriptreact': ['standard'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_rust_rls_config = {'rust': {'clippy_preference': 'on'}}
+let g:rustfmt_autosave = 1
 
 """ lsc_client
 
@@ -65,6 +68,7 @@ autocmd CompleteDone * silent! pclose
 
 " we're using standard, so two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " alright, so i'm too used to HTML looking like this now
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
