@@ -59,6 +59,11 @@ let g:lsc_server_commands = {
 \		'log_level': -1,
 \		'suppress_stderr': v:true,
 \	},
+\	'python': {
+\		'command': 'pylsp',
+\		'log_level': -1,
+\		'suppress_stderr': v:true,
+\	},
 \}
 let g:lsc_auto_map = {
 \	'defaults': v:true,
@@ -80,6 +85,9 @@ autocmd FileType markdown setlocal tw=80 shiftwidth=2 softtabstop=2 nonumber exp
 
 " dart
 autocmd FileType dart setlocal shiftwidth=2 softtabstop=2 expandtab
+
+" c# (based on the SS14 code style)
+autocmd FileType cs setlocal shiftwidth=4 softtabstop=4 expandtab
 
 """" runtime stuff (mostly airline)
 
