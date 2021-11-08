@@ -6,8 +6,20 @@ set number
 set noshowmode
 set cursorline
 set updatetime=100
+set nohlsearch
+set mouse=a
 set t_Co=256
 colorscheme fox-colors
+
+""" gui-specific stuff
+
+set guifont=Monoid:h9
+hi Normal guibg=#222222
+
+""" terminal
+tnoremap <Esc> <C-\><C-n>
+
+autocmd TermOpen * nonumber
 
 """ airline
 
@@ -88,6 +100,8 @@ autocmd FileType dart setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " c# (based on the SS14 code style)
 autocmd FileType cs setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd BufNewFile,BufRead *.xaml setf xml
+autocmd FileType xml setlocal shiftwidth=4 softtabstop=4 expandtab
 
 """" runtime stuff (mostly airline)
 

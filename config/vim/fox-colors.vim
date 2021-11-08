@@ -18,8 +18,8 @@ endif
 " GUI color definitions
 let s:gui00        = "181818"
 let g:base16_gui00 = "181818"
-let s:gui01        = "282828"
-let g:base16_gui01 = "282828"
+let s:gui01        = "222222"
+let g:base16_gui01 = "222222"
 let s:gui02        = "383838"
 let g:base16_gui02 = "383838"
 let s:gui03        = "585858"
@@ -116,7 +116,7 @@ if has("nvim")
   let g:terminal_color_13 = "#ba8baf"
   let g:terminal_color_14 = "#86c1b9"
   let g:terminal_color_15 = "#f8f8f8"
-  let g:terminal_color_background = g:terminal_color_0
+  let g:terminal_color_background = g:terminal_color_1
   let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
     let g:terminal_color_background = g:terminal_color_7
@@ -215,7 +215,7 @@ call <sid>hi("LineNr",        s:gui03, s:gui01, s:cterm03, s:cterm00, "", "")
 call <sid>hi("SignColumn",    s:gui03, s:gui01, s:cterm00, s:cterm00, "", "")
 call <sid>hi("StatusLine",    s:gui04, s:gui02, s:cterm04, s:cterm00, "none", "")
 call <sid>hi("StatusLineNC",  s:gui03, s:gui01, s:cterm03, s:cterm01, "none", "")
-call <sid>hi("VertSplit",     s:gui02, s:gui02, s:cterm00, s:cterm00, "none", "")
+call <sid>hi("VertSplit",     s:gui02, s:gui01, s:cterm00, s:cterm00, "none", "")
 call <sid>hi("ColorColumn",   "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("CursorColumn",  "", s:gui01, "", s:cterm03, "none", "")
 call <sid>hi("CursorLine",    "", s:gui01, "", "none", "none", "")

@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=~/go/bin/:~/.cargo/bin:~/.pub-cache/bin:~/.android-studio/bin:~/.local/bin:$PATH
+export PATH=~/go/bin/:~/.cargo/bin:~/.pub-cache/bin:~/.android-studio/bin:~/.local/bin:~/.dotnet/tools:~/.dotnet/shared:~/.dotnet:$PATH
 
 ### ALIASES ###
 
@@ -162,4 +162,5 @@ export EDITOR=vim
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # specifically for omnisharp
-export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
+# export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
+export MSBuildSDKsPath=~/.dotnet/sdk/$(dotnet --version)/Sdks
