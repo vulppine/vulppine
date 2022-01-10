@@ -1,5 +1,31 @@
 runtime defaults.vim
 
+"""" plugins
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+
+""" vim qol
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+
+""" languages
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'rust-lang/rust.vim'
+
+""" language utilities
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'dense-analysis/ale'
+
+""" git
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
 """" global variables
 
 set number
@@ -19,7 +45,7 @@ hi Normal guibg=#222222
 """ terminal
 tnoremap <Esc> <C-\><C-n>
 
-autocmd TermOpen * nonumber
+autocmd TerminalWinOpen * nonumber
 
 """ airline
 
