@@ -146,9 +146,6 @@ alias emacs-term='urxvt \
 -color15 #ffffff \
 -e emacs -nw'
 
-### BYOND ###
-source ~/BYOND-513/bin/byondsetup
-
 ### ENV VARS ###
 if [ $TERM = "linux" ]; then
 	PS1=' %~ > '
