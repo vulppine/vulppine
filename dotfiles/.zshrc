@@ -113,6 +113,15 @@ ghbu() {
 	git branch -u gh/$1
 }
 
+ghgpr() {
+	if [[ $1 == "" || $2 == "" ]]; then
+		echo "ghgpr usage: ghgpr (remote) (pr number)"
+		return
+	fi
+
+	git fetch $1 pull/$2/head:prs/$2
+}
+
 ### ETC ###
 alias alsamixer='alsamixer -g'
 alias scroth='/bin/scrot -s screen.png'
